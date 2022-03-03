@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   # root to: 'users#index'
   # get '/users/', to: 'users#index' # path, to index usercontroller --> method
   # get "/users/:id", to: "users#show"
-  resources :users , only: [:index, :show] 
-  resources :posts, only: [:index, :show]
-  
-
+  resources :users, only: %i[index show]
+  resources :posts, only: %i[index show]
 end
