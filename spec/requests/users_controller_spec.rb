@@ -1,28 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
-  describe 'GET index' do
-    it 'has a 200 status code' do
-      get :index
-      expect(response.status).to eq(200)
-    end
-  end
-end
-
-RSpec.describe UsersController, type: :controller do
-  render_views
-
-  describe 'GET index' do
-    it 'has a page related heading' do
-      get :index
-      expect(response.body).to match(/<h1>.*users/im)
-    end
-  end
-end
-
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     before(:example) { get users_path }
+    it 'Successfuly get route' do
+      expect(response).to have_http_status(:ok)
+    end
 
     it "Renders 'index' template for users" do
       expect(response).to render_template('index')
