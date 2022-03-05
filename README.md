@@ -60,8 +60,8 @@ Run Migraation
 ```
 rails db:migrate
 ```
-Run
-``
+Run test
+```
 rspec spec
 ```
 
