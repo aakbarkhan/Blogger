@@ -40,6 +40,31 @@ Auto fix the errors if available
 ```
 rubocop -A
 ```
+# For test:
+
+Installation:
+```
+gem install rails -v "~> 3.0.0"
+```
+ADD this to your Gemfile
+```
+group :development, :test do
+  gem 'rspec-rails'
+end
+```
+Install the bundle
+```
+bundle install
+```
+Run Migraation
+```
+rails db:migrate
+```
+Run
+``
+rspec spec
+```
+
 ## Authors
 
 👤 **aku** 
