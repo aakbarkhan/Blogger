@@ -3,6 +3,9 @@
 
 |  Blog App Project. That Built by using Ruby on Rails.
 #
+## Entity Relationship Diagram
+
+![](./blog_app.png)
 # Built With
 * Ruby on Rails
 #
