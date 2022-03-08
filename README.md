@@ -3,6 +3,9 @@
 
 |  Blog App Project. That Built by using Ruby on Rails.
 #
+## Entity Relationship Diagram
+
+![](./blog_app.png)
 # Built With
 * Ruby on Rails
 #
@@ -40,6 +43,31 @@ Auto fix the errors if available
 ```
 rubocop -A
 ```
+# For test:
+
+Installation:
+```
+gem install rails -v "~> 3.0.0"
+```
+ADD this to your Gemfile
+```
+group :development, :test do
+  gem 'rspec-rails'
+end
+```
+Install the bundle
+```
+bundle install
+```
+Run Migraation
+```
+rails db:migrate
+```
+Run test
+```
+rspec spec
+```
+
 ## Authors
 
 👤 **aku** 
