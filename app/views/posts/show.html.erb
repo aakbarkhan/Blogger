@@ -2,7 +2,7 @@
 Post # <%= params[:id] %>
  <h3> <%= @post.title %> by <%= @user.name %> </h3>
  <%= @post.text %>
- <p>Comment(s): <%= @post.comment_counter%></p>
+ <p>Comment(s): <%= @post.author.comment_ids.count%></p>
 <p>Likes(s): <%= @post.likes_counter%></p>
 
   <% @comments.each do |comment| %>

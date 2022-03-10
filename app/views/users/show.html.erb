@@ -16,7 +16,7 @@ Number Of Posts: <%= @user.post_counter%>
 <%= post.text  %>
 </div>
 <div>
-comment_counter:<%= post.comment_counter%><span>
+comment_counter:<%= post.author.comment_ids.count%><span>
 likes_counter:<%= post.likes_counter%>
 </div>
 
