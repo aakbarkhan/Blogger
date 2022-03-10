@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   # get "/users/:id", to: "users#show"
   # resources :users, only: %i[index show]
   # resources :posts, only: %i[index show]
+  
   root to: 'users#index'
   resources :users, only: %i[show index] do
-    resources :posts, only: %i[show index]
+    resources :posts, only: %i[show index new create]
   end
 end
 
