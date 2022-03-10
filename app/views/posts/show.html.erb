@@ -1,1 +1,10 @@
-<h1>This is user <%= params[:id] %> post</h1>
+<h1>This is user post</h1>
+Post # <%= params[:id] %>
+ <h3> <%= @post.title %> by <%= @user.name %> </h3>
+ <%= @post.text %>
+ <p>Comment(s): <%= @post.comment_counter%></p>
+<p>Likes(s): <%= @post.likes_counter%></p>
+
+  <% @comments.each do |comment| %>
+      <p><%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
