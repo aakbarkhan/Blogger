@@ -8,12 +8,16 @@
 <% @posts.each do |post|%>
 <h2> <%= link_to "#{post.title}", user_post_path(@user.id, post.id) %>  </h2>
     <h1>Post Title:<%= post.text%></h1>
-    <p>Comment(s): <%= post.comment_counter%></p>
+    <p>Comment(s): <%= post.author.comment_ids.count %></p>
     <p>Likes(s): <%= post.likes_counter%></p>
     <% post.recent_comments.each do |comment| %>
     <p><%= comment.author.name%> :<%= comment.text %></p>
     <% end %>
 <%end%>
+<div>
+<button class="button"> <%= link_to "Create a post",  new_user_post_path(@user), {:class => "button_class"} %> </button>
+ 
+</div>
  <div>
  <button>Pagination</button>
 </div>
