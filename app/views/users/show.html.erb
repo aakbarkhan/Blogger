@@ -3,7 +3,7 @@
 <%= image_tag("id2.png", size: "300x100", :alt => "user foto") %>
 <div>
 User Name:<%= @user.name%>
-Number Of Posts: <%= @user.post_counter%>
+Number Of Posts: <%= @user.post_ids.count%>
 </div>
 <div>
 <%= @user.bio%>

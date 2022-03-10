@@ -6,7 +6,7 @@
 <%= link_to user_path(user.id) do %>
   User: <%= user.name %><br>
   <%end%>
-    <p class="posts">Number of Posts: <%= user.post_counter %> </p>
+    <p class="posts">Number of Posts: <%= user.post_ids.count %> </p>
 </div>
 </div>
 <% end %>

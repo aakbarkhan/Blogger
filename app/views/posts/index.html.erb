@@ -3,7 +3,7 @@
  <div>
     <%= image_tag( "id.png", height: '150px',width:'100%', :style => "border-radius: 10px")%>
     <h2> <%= @user.name %> </h2>
-      <p>Number of Posts: <%= @user.post_counter %></p>
+      <p>Number of Posts: <%= @user.post_ids.count %></p>
 </div>
 <% @posts.each do |post|%>
 <h2> <%= link_to "#{post.title}", user_post_path(@user.id, post.id) %>  </h2>
