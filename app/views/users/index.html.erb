@@ -1,1 +1,14 @@
 <h1>users index</h1>
+<% @users.each do |user| %>
+<div>
+<%= image_tag("id.png", size: "100x100", :alt => "user foto")%>
+<div>
+<%= link_to user_path(user.id) do %>
+  User: <%= user.name %><br>
+  <%end%>
+    <p class="posts">Number of Posts: <%= user.post_counter %> </p>
+</div>
+</div>
+<% end %>
+
+
