@@ -1,1 +1,19 @@
-<h1>users post index</h1>
+<h1>users post </h1>
+
+ <div>
+    <%= image_tag( "id.png", height: '150px',width:'100%', :style => "border-radius: 10px")%>
+    <h2> <%= @user.name %> </h2>
+      <p>Number of Posts: <%= @user.post_ids.count %></p>
+</div>
+<% @posts.each do |post|%>
+<h2> <%= link_to "#{post.title}", user_post_path(@user.id, post.id) %>  </h2>
+    <h1>Post Title:<%= post.text%></h1>
+    <p>Comment(s): <%= post.comment_counter%></p>
+    <p>Likes(s): <%= post.likes_counter%></p>
+    <% post.recent_comments.each do |comment| %>
+    <p><%= comment.author.name%> :<%= comment.text %></p>
+    <% end %>
+<%end%>
+ <div>
+ <button>Pagination</button>
+</div>
