@@ -10,6 +10,7 @@ class LikesController < ApplicationController
     if new_like.save
       redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!'
     else
+      flash.now[:error] = 'Failed to Post like'
       redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", alert: 'Error occured!'
     end
   end
