@@ -2,6 +2,11 @@
 Post # <%= params[:id] %>
  <h3> <%= @post.title %> by <%= @user.name %> </h3>
  <%= @post.text %>
+
+ <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+    <%= form.submit "Like ", class: "post-like-btns"%>
+  <% end %>
+  
  <p>Comment(s): <%= @post.author.comment_ids.count%></p>
 <p>Likes(s): <%= @post.likes_counter%></p>
 

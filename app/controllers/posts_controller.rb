@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new  
+    @post = Post.new
   end
 
   def create
@@ -20,11 +20,13 @@ class PostsController < ApplicationController
     @new_post.likes_counter = 0
     @new_post.comment_counter = 0
     respond_to do |format|
-      if @new_post.save
-        # redirect_to "/users/#{@new_post.author.id}/posts/", notice: 'Created Successfuly'
-        redirect_to "/users/#{@new_post.author.id}/posts/", notice: 'Created Successfully' 
-      else
-        render :new, alert: 'Failed to Create!'
+      format.html do
+        if @new_post.save
+          # redirect_to "/users/#{@new_post.author.id}/posts/", notice: 'Created Successfuly'
+          redirect_to "/users/#{@new_post.author.id}/posts/", notice: 'Created Successfully'
+        else
+          render :new, alert: 'Failed to Create!'
+        end
       end
     end
   end
