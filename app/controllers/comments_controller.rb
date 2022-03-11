@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to user_post_path(@post.id, Post.find(params[:post_id]))
     else
+      flash.now[:error] = 'Failed to create comment'
       render :new
     end
   end
