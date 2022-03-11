@@ -21,7 +21,8 @@ class PostsController < ApplicationController
     @new_post.comment_counter = 0
     respond_to do |format|
       if @new_post.save
-        redirect_to "/users/#{@user.id}/posts/", notice: 'Created Successfuly'
+        # redirect_to "/users/#{@new_post.author.id}/posts/", notice: 'Created Successfuly'
+        redirect_to "/users/#{@new_post.author.id}/posts/", notice: 'Created Successfully' 
       else
         render :new, alert: 'Failed to Create!'
       end

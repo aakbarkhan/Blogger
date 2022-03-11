@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   resources :users, only: %i[show index] do
     resources :posts, only: %i[show index new create]
   end
+
+  resources :posts do
+    resources :comments, only: %i[create new]
+    resources :likes, only: %i[create]
+  end
 end
 
 

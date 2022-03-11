@@ -8,3 +8,7 @@ Post # <%= params[:id] %>
   <% @comments.each do |comment| %>
       <p><%= comment.author.name %>: <%= comment.text %></p>
     <% end %>
+
+<div>
+    <%= render partial: "create_comments", local: { post: @post } %>
+  </div>
