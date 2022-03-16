@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.1'
 gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'devise'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -75,5 +76,3 @@ end
 group :development, :test do
   gem 'rspec-rails'
 end
-
-gem 'devise'
