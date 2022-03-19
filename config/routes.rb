@@ -4,6 +4,16 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+  
+  namespace :api, default: {format: :json} do 
+    namespace :v1,  default: {format: :json} do
+      resources :users, only: [:index, :show] do
+      resources :posts, only: [:index, :show, :create] do
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
+end
 
   resources :users, only: %i[index show] do 
     resources :posts, only: %i[index new create show destroy]
@@ -16,3 +26,4 @@ Rails.application.routes.draw do
   resources :comments, only: %i[destroy]
   resources :likes, only: %i[destroy]
 end
+
